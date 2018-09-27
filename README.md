@@ -1,10 +1,12 @@
 # buildLibrealsense2TX
 Build librealsense 2.0 library on the NVIDIA Jetson TX Development kit. Jetson TX1 and Jetson TX2. Intel RealSense D400 series cameras.
 
-This is for version L4T 28.2 / L4T 28.2.1 (JetPack 3.2.1)
-librealsense v2.13.0
+<h2>Modification</h2>
+This is for version L4T 28.2 / L4T 28.2.1 (JetPack 3.3)
+librealsense v2.16.1
+build deb file
 
-July, 2018
+September, 2018
 
 In order for librealsense to work properly, the kernel image must be rebuilt and patches applied to the UVC module and some other support modules. Running installLibrealsense.sh alone will appear to make the camera mostly work but will be missing features such as frame metadata support ( https://github.com/IntelRealSense/librealsense/blob/master/doc/frame_metadata.md ).
 
