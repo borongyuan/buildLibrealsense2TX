@@ -9,7 +9,7 @@
 LIBREALSENSE_DIRECTORY=${HOME}/librealsense
 LIBREALSENSE_VERSION=v2.16.1
 INSTALL_DIR=$PWD
-
+export OpenCV_DIR=~/opencv/build
 
 BUILD_CMAKE=true
 
