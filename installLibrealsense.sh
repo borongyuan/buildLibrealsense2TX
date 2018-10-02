@@ -113,13 +113,13 @@ cd build
 echo "${green}Configuring Make system${reset}"
 # Use the CMake version that we built, must be > 3.8
 # Build with CUDA (default), the CUDA flag is USE_CUDA, ie -DUSE_CUDA=true
-${HOME}/CMake/bin/cmake ../ -DBUILD_EXAMPLES=true -DBUILD_WITH_CUDA=true -DBUILD_PYTHON_BINDINGS=bool:true
+${HOME}/CMake/bin/cmake ../ -DBUILD_EXAMPLES=true -DBUILD_WITH_CUDA=true -DBUILD_PYTHON_BINDINGS=bool:true -DBUILD_CV_EXAMPLES=true -DCPACK_BINARY_DEB=true
 # The library will be installed in /usr/local/lib, header files in /usr/local/include
 # The demos, tutorials and tests will located in /usr/local/bin.
 echo "${green}Building librealsense, headers, tools and demos${reset}"
 
 NUM_CPU=$(nproc)
-time make -j$(($NUM_CPU - 1))
+time make -j$(($NUM_CPU))
 if [ $? -eq 0 ] ; then
   echo "librealsense make successful"
 else
@@ -139,8 +139,12 @@ else
   fi
 fi
 echo "${green}Installing librealsense, headers, tools and demos${reset}"
-sudo checkinstall
+sudo make install
 echo "${green}Library Installed${reset}"
+echo "Starting Packaging"
+sudo ldconfig
+NUM_CPU=$(nproc)
+time sudo make package -j$(($NUM_CPU))
 echo " "
 echo " -----------------------------------------"
 echo "The library is installed in /usr/local/lib"

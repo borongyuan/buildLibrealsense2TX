@@ -11,7 +11,7 @@ echo "${green}Adding Universe repository and updating${reset}"
 apt-add-repository universe
 apt-get update
 echo "${green}Adding dependencies, graphics libraries and tools${reset}"
-apt-get install libusb-1.0-0-dev pkg-config checkinstall -y
+apt-get install libusb-1.0-0-dev pkg-config -y
 # This is for ccmake
 apt-get install build-essential -y
 # librealsense requires CMake 3.8; This cmake-curses-gui is for 3.5.1
