@@ -3,7 +3,7 @@ Build librealsense 2.0 library on the NVIDIA Jetson TX Development kit. Jetson T
 
 <h2>Modification</h2>
 This is for version L4T 28.2 / L4T 28.2.1 (JetPack 3.3)
-librealsense v2.16.1
+librealsense v2.16.5
 build deb file
 
 September, 2018
